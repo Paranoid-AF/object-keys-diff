@@ -37,4 +37,4 @@ const keysDiff = (obj1, obj2, keys) => {
   return result
 }
 
-module.exports = keyDiff
+module.exports = keysDiff
