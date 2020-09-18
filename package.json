@@ -1,0 +1,9 @@
+{
+  "name": "object-keys-diff",
+  "version": "1.0.0",
+  "description": "A node module that compares multiple designated key's value in two objects.",
+  "main": "index.js",
+  "repository": "https://github.com/Paranoid-AF/object-keys-diff.git",
+  "author": "Paranoid_AF",
+  "license": "MIT"
+}
