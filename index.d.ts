@@ -19,6 +19,6 @@ keyDiff(obj1, obj2, keyArr)
 ```
 */
 
-declare function keyDiff(object1: object, object2: object, keys: Array<string>): object
+declare function keysDiff(object1: object, object2: object, keys: Array<string>): object
 
-export = keyDiff
+export = keysDiff

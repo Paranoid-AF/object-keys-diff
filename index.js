@@ -8,7 +8,7 @@ const getNodeContent = (obj, key) => {
   }
 }
 
-const keyDiff = (obj1, obj2, keys) => {
+const keysDiff = (obj1, obj2, keys) => {
   const result = { }
   if(typeof keys === "string"){
     keys = [ keys ]
