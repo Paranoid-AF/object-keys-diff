@@ -12,6 +12,16 @@ keysDiff(obj1, obj2, keyArr)
 ```
 */
 
-declare function keysDiff(object1: object, object2: object, keys: Array<string> | string): object
+interface DiffResult {
+  value1: any,
+  value2: any,
+  different: boolean
+}
+
+interface DiffResultCollection {
+  [index: string]: DiffResult
+}
+
+declare function keysDiff(object1: object, object2: object, keys: Array<string> | string): DiffResultCollection
 
 export = keysDiff

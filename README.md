@@ -31,13 +31,36 @@ const keysDiff = require('object-keys-diff')
 /* 
   true means different, false means the value is the same or non-existing in one object.
   You could input an array. Key names in path should be divided with dots.
+  
+  @return
+  {
+    name: { value1: 'Alex', value2: 'Sarah', different: true },
+    'properties.computer.ramByGigabyte': { value1: 8, value2: 8, different: false }
+  }
 */
-console.log(keysDiff(object1, object2, ["name", "properties.computer.ramByGigabyte"])) // { name: true, 'properties.computer.ramByGigabyte': false }
+console.log(keysDiff(object1, object2, ["name", "properties.computer.ramByGigabyte"]))
 
-/* A single string is also accepted. */
-console.log(keysDiff(object1, object2, "properties.phone")) // { 'properties.phone': true }
+/*
+  A single string is also accepted.
 
-/* true when a key is not existing in any of the objects. */
-console.log(keysDiff(object1, object2, "properties.phone.ramByGigabyte")) // { 'properties.phone.ramByGigabyte': true }
+  @return
+  {
+    'properties.phone': {
+      value1: 'Super Duper Phone',
+      value2: 'Phones for Normies',
+      different: true
+    }
+  }
+*/
+console.log(keysDiff(object1, object2, "properties.phone"))
+/*
+  true when a key is not existing in any of the objects.
+
+  @return
+  {
+    'properties.phone.ramByGigabyte': { value1: undefined, value2: undefined, different: true }
+  }
+*/
+console.log(keysDiff(object1, object2, "properties.phone.ramByGigabyte"))
 
 ```

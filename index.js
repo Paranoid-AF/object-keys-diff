@@ -20,18 +20,29 @@ const keysDiff = (obj1, obj2, keys) => {
     for(let i=0; i<keyPaths.length; i++){
       try{
         currentNode1 = getNodeContent(currentNode1, keyPaths[i])
+      }catch{
+        currentNode1 = undefined
+      }
+      try{
         currentNode2 = getNodeContent(currentNode2, keyPaths[i])
       }catch{
+        currentNode2 = undefined
+      }
+      if(currentNode1 === undefined && currentNode2 === undefined){
         break;
       }
       if(i === keyPaths.length - 1){
         reached = true
       }
     }
+    result[val] = {
+      value1: currentNode1,
+      value2: currentNode2,
+    }
     if(!reached){
-      result[val] = true
+      result[val].different = true
     }else{
-      result[val] = currentNode1 !== currentNode2
+      result[val].different = currentNode1 !== currentNode2
     }
   })
   return result
